@@ -12,7 +12,7 @@ class Project(models.Model):
     description = models.TextField()
     tags = models.ManyToManyField(Tag,related_name='projects')
     link = models.URLField(max_length=200,blank=True)
-
+    rank = models.IntegerField(default=10)
     def __str__(self) -> str:
         return self.title
 

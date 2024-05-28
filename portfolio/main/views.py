@@ -4,7 +4,7 @@ from .models import Project, Tag
 # Create your views here.
 
 def home(request):
-    projects = Project.objects.all()
+    projects = Project.objects.all().order_by('rank')
     tags = Tag.objects.all()
     return render(request,'home.html',{'projects':projects,'tags':tags})
 
