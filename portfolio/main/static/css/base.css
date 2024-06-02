@@ -4,13 +4,21 @@
     margin: 0;
     padding: 0;
     font-family: "Arial", sans-serif;
+    --color-dark: #16161A;
+    --color-gray: #242629;
+    --color-light-gray: #94A1B2;
+    --color-white: #FFFFFE;
+    --color-green: #2CB67D;
+    --color-arrow-gray: #72757E;
+    --color-red: #ff3f34;
+    --color-eye: rgb(255, 255, 231);
 }
 
 body {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: #333;
-    background-color: #f4f4f4;
+    background-color: var(--color-dark);
+    color: var(--color-white);
     padding: 20px;
 }
 

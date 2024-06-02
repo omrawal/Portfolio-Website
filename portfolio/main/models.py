@@ -22,3 +22,16 @@ class ProjectImage(models.Model):
 
     def __str__(self) -> str:
         return f"{self.project.title} Image"
+
+class ProfilePicture(models.Model):
+    image = models.ImageField(upload_to='profile_picture/')
+
+class Resume(models.Model):
+    resume = models.URLField(max_length=200,blank=True)
+
+class Skill(models.Model):
+    skill_title = models.CharField(max_length=200)
+    skill_logo_link = models.URLField(max_length=200,blank=True)
+    rank = models.IntegerField(default=10)
+    def __str__(self) -> str:
+        return self.skill_title
