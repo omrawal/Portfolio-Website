@@ -35,3 +35,15 @@ class Skill(models.Model):
     rank = models.IntegerField(default=10)
     def __str__(self) -> str:
         return self.skill_title
+
+class Experience(models.Model):
+    company_name = models.CharField(max_length=200)
+    company_logo_link = models.URLField(max_length=200,blank=True)
+    company_website_link = models.URLField(max_length=200,blank=True)
+    designation = models.CharField(max_length=200)
+    description = models.TextField(null=True)
+    tools = models.TextField(null=True)
+    period_and_location = models.CharField(max_length=200) # Dec 2018 - July 2019 | Ahmedabad, India
+    rank = models.IntegerField(default=10)
+    def __str__(self) -> str:
+        return f"{self.company_name},{self.designation},{self.period_and_location}"
