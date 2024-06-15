@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Project, Tag,Resume,ProfilePicture,Skill,Experience
+from .models import Project, Tag,Resume,ProfilePicture,Skill,Experience,About
 
 # Create your views here.
 
@@ -12,6 +12,7 @@ def home(request):
 
     tags = Tag.objects.all()
     profile_picture = ProfilePicture.objects.all()[0]
+    about = About.objects.all()[0]
     resume_file = Resume.objects.all()[0]
     skills = Skill.objects.all().order_by('rank')
     experiences = Experience.objects.all().order_by('rank')
@@ -21,7 +22,7 @@ def home(request):
 
     return render(request,'home.html',{'projects':projects,'tags':tags,'resume':resume_file,
                                        'profile_picture':profile_picture,
-                                       'skills':skills,'experiences':experiences})
+                                       'skills':skills,'experiences':experiences,'about':about})
 
 def contact(request):
     return render(request,'contact.html')

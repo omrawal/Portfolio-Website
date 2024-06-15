@@ -47,3 +47,13 @@ class Experience(models.Model):
     rank = models.IntegerField(default=10)
     def __str__(self) -> str:
         return f"{self.company_name},{self.designation},{self.period_and_location}"
+    
+class About(models.Model):
+    headline = models.TextField()
+    languages = models.TextField()
+    databases = models.TextField()
+    libraries = models.TextField()
+    frameworks = models.TextField()
+    tools_and_tech = models.TextField()
+    def __str__(self) -> str:
+        return f"About Content"
