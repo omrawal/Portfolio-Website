@@ -9,6 +9,7 @@ class Tag(models.Model):
     
 class Project(models.Model):
     title = models.CharField(max_length=200)
+    subtitle = models.CharField(max_length=200,null=True)
     description = models.TextField()
     tags = models.ManyToManyField(Tag,related_name='projects')
     link = models.URLField(max_length=200,blank=True)
